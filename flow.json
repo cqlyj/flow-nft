@@ -1,30 +1,36 @@
 {
-  "contracts": {
-    "BasicNft": {
-      "source": "cadence/contracts/BasicNft.cdc",
-      "aliases": {
-        "testing": "0000000000000007"
-      }
-    }
-  },
-  "networks": {
-    "emulator": "127.0.0.1:3569",
-    "mainnet": "access.mainnet.nodes.onflow.org:9000",
-    "testing": "127.0.0.1:3569",
-    "testnet": "access.devnet.nodes.onflow.org:9000"
-  },
-  "accounts": {
-    "emulator-account": {
-      "address": "f8d6e0586b0a20c7",
-      "key": {
-        "type": "file",
-        "location": "emulator-account.pkey"
-      }
-    }
-  },
-  "deployments": {
-    "emulator": {
-      "emulator-account": ["BasicNft"]
-    }
-  }
+	"contracts": {
+		"BasicNft": {
+			"source": "cadence/contracts/BasicNft.cdc",
+			"aliases": {
+				"testing": "0000000000000007"
+			}
+		}
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testing": "127.0.0.1:3569",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": {
+				"type": "file",
+				"location": "emulator-account.pkey"
+			}
+		},
+		"test-account": {
+			"address": "179b6b1cb6755e31",
+			"key": "973ad05e781951c193045b80105babce5ffc25e2b621588fd9c73fc26131c1a0"
+		}
+	},
+	"deployments": {
+		"emulator": {
+			"emulator-account": [
+				"BasicNft"
+			]
+		}
+	}
 }
