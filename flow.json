@@ -5,6 +5,12 @@
 			"aliases": {
 				"testing": "0000000000000007"
 			}
+		},
+		"ExampleNft": {
+			"source": "cadence/contracts/ExampleNft.cdc",
+			"aliases": {
+				"testing": "0000000000000007"
+			}
 		}
 	},
 	"networks": {
