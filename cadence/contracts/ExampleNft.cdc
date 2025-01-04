@@ -70,10 +70,25 @@ contract ExampleNft {
         return <-create Collection()
     }
 
+    // mintNFT
+    //
+    // Function that mints a new NFT with a new ID
+    // and returns it to the caller
+
+    access(all) fun mintNft(): @NFT {
+        var newNft: @ExampleNft.NFT <- create NFT(initId: self.idCount) 
+        // change the id so that each ID is unique
+        self.idCount = self.idCount + 1
+        return <-newNft
+    }
+
     init() {
         self.CollectionStoragePath = /storage/ExampleNftCollection
         self.CollectionPublicPath = /public/ExampleNftCollection
         self.MinterStoragePath = /storage/ExampleNftMinter
         self.idCount = 1
+
+        // store an empty NFT Collection in account storage
+        self.account.storage.save( <- self.createEmptyCollection(), to: self.CollectionStoragePath)
     }
 }
