@@ -47,6 +47,11 @@ contract ExampleNft {
         //
         // Function that takes a NFT as an argument and
         // adds it to the collections dictionary
+        access(all) fun deposit(token: @NFT) {
+            // add the new token to the dictionary with a force assignment
+            // if there is already a value at that key, it will fail and revert
+            self.ownedNFT[token.id] <-! token
+        }
 
         // idExists checks to see if a NFT
         // with the given ID exists in the collection
