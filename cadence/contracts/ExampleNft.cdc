@@ -60,7 +60,9 @@ contract ExampleNft {
         }
 
         // getIDs returns an array of the IDs that are in the collection
-        
+        access(all) view fun getIds (): [UInt64] {
+            return self.ownedNFT.keys
+        }
     }
 
     init() {
