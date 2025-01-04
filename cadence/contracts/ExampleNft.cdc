@@ -65,6 +65,11 @@ contract ExampleNft {
         }
     }
 
+    // creates a new empty Collection resource and returns it
+    access(all) fun createEmptyCollection(): @Collection {
+        return <-create Collection()
+    }
+
     init() {
         self.CollectionStoragePath = /storage/ExampleNftCollection
         self.CollectionPublicPath = /public/ExampleNftCollection
