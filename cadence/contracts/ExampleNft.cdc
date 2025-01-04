@@ -55,6 +55,9 @@ contract ExampleNft {
 
         // idExists checks to see if a NFT
         // with the given ID exists in the collection
+        access(all) view fun idExists (id: UInt64): Bool {
+            return self.ownedNFT[id] != nil
+        }
 
         // getIDs returns an array of the IDs that are in the collection
         
