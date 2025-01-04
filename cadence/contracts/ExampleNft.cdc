@@ -90,5 +90,11 @@ contract ExampleNft {
 
         // store an empty NFT Collection in account storage
         self.account.storage.save( <- self.createEmptyCollection(), to: self.CollectionStoragePath)
+
+        // publish a capability to the Collection in storage
+        let cap =  self.account.capabilities.storage.issue<&Collection>(
+            self.CollectionStoragePath
+        )
+        self.account.capabilities.publish(cap, at: self.CollectionPublicPath)
     }
 }
