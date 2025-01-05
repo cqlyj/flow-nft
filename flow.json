@@ -35,7 +35,8 @@
 	"deployments": {
 		"emulator": {
 			"emulator-account": [
-				"BasicNft"
+				"BasicNft",
+				"ExampleNft"
 			]
 		}
 	}
