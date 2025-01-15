@@ -34,7 +34,7 @@ contract ExampleNft {
         //
         // Function that removes an NFT from the collection
         // and moves it to the calling context
-        access(all) fun withdraw (withdrawId: UInt64): @NFT {
+        access(Withdraw) fun withdraw (withdrawId: UInt64): @NFT {
             let token: @ExampleNft.NFT <- self.ownedNFT.remove(key: withdrawId) 
                 ?? panic("NFT not found in collection with id="
                     .concat(withdrawId.toString())
